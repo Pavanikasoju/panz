@@ -1,5 +1,5 @@
 repo_name=demo
-image_tag=SAMPLE-PROJECT-40
+image_tag=SAMPLE-PROJECT-${BUILD_NUMBER}
 arn=arn:aws:sns:us-east-1:656705438072:demo-sq
 
 critical_vulnr=$(aws ecr describe-image-scan-findings --repository-name $repo_name --image-id imageTag=$image_tag | grep -i "findingSeverityCounts" -A 5 | grep -i critical | cut -d ":" -f 2 | tr -d ",")
