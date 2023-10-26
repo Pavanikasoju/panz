@@ -17,7 +17,7 @@ echo "High vulnerabilities: $high_vulnr"
 echo "Critical vulnerabilities: $critical_vulnr"
 
 if[ "$high_critical_vulnerabilities" -ge "5"] then
-    echo "High or critical vulnerabilities found ($high_critical_vulnerabilities) in the image. Build failed."
+    echo "High or critical vulnerabilities found ($high_critical_vulnerabilities) in the image. Build failed." && exit 1;
 
 if [[ $high_vulnr -gt 0 || $critical_vulnr -ge 10 ]]
 then
